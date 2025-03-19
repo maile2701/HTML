@@ -5,7 +5,7 @@ const height = 250 - margin.top - margin.bottom;
 const container = d3.select("#chart")
     .style("display", "flex")
     .style("flex-wrap", "wrap")
-    .style("gap", "20px");
+    .style("gap", "40px");
 
 const tooltip = d3.select("body")
     .append("div")
