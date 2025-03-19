@@ -49,7 +49,7 @@ d3.csv("data.csv").then(data => {
             .padding(0.4);  // 🔹 Giúp thanh bar rộng hơn
 
         const y = d3.scaleLinear()
-            .domain([0, Math.max(0.1, d3.max(matHangData, d => d.xacSuat))])  // 🔹 Đảm bảo tối thiểu 10%
+            .domain([0, Math.max(0.1, d3.max(matHangData, d => d.xacSuat))])  
             .range([height, 0]);
 
         const colorScale = d3.scaleOrdinal()
@@ -64,7 +64,7 @@ d3.csv("data.csv").then(data => {
             .attr("x", d => x(d.tenMatHang))
             .attr("y", d => y(d.xacSuat))
             .attr("width", x.bandwidth())
-            .attr("height", d => Math.max(5, height - y(d.xacSuat)))  // 🔹 Đảm bảo chiều cao tối thiểu 5px
+            .attr("height", d => Math.max(5, height - y(d.xacSuat)))  
             .style("fill", d => colorScale(d.tenMatHang))
             .on("mouseover", (event, d) => {
                 tooltip.style("visibility", "visible")
