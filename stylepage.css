@@ -1,0 +1,69 @@
+/* Định dạng toàn bộ trang */
+body {
+    font-family: Times, sans-serif;
+    background-color: #f6f4eb; /* Màu nền pastel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 30px;
+}
+
+/* Tiêu đề */
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #852d2d;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Chia menu thành 2 cột */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px; /* Khoảng cách giữa 2 cột */
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Căn chỉnh danh sách */
+.menu {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+/* Kiểu cho từng mục menu */
+.menu li {
+    margin: 10px 0;
+}
+
+/* Kiểu cho link */
+.menu li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: hsl(0, 0%, 100%);
+    background-color: #7f1818d9;
+    padding: 12px 30px;
+    border-radius: 25px;
+    display: block;
+    text-align: left; /* Căn text về bên trái */
+    width: 100%;
+    transition: 0.3s;
+}
+
+/* Đổi màu xen kẽ giữa các cột */
+.menu.left li:nth-child(odd) a,
+.menu.right li:nth-child(even) a {
+    background-color: #5f8512db;
+}
+
+/* Hiệu ứng hover */
+.menu li a:hover {
+    background-color: #d5a209d1;
+    transform: scale(1.05);
+}

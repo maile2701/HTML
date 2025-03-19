@@ -1,0 +1,47 @@
+/* Căn giữa nội dung */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f6f4eb;
+    font-family: Arial, sans-serif;
+}
+
+/* Tiêu đề */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Hiệu ứng hover */
+.bar:hover {
+    opacity: 0.8;
+    transform: scaleX(1.02);
+    transition: 0.3s ease-in-out;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Hiển thị tooltip khi hover vào thanh bar */
+.bar:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
