@@ -1,6 +1,6 @@
-const margin = { top: 30, right: 30, bottom: 40, left: 50 };
-const width = Math.min(400, window.innerWidth / 3 - margin.left - margin.right);
-const height = 250 - margin.top - margin.bottom;
+const margin = { top: 30, right: 50, bottom: 40, left: 60 },
+      width = 200 - margin.left - margin.right,
+      height = 50 - margin.top - margin.bottom;
 
 const container = d3.select("#chart")
     .style("display", "flex")
@@ -46,10 +46,10 @@ d3.csv("data.csv").then(data => {
         const x = d3.scaleBand()
             .domain(matHangData.map(d => d.tenMatHang))
             .range([0, width])
-            .padding(0.4);  // 🔹 Giúp thanh bar rộng hơn
+            .padding(0.2);
 
         const y = d3.scaleLinear()
-            .domain([0, Math.max(0.1, d3.max(matHangData, d => d.xacSuat))])  
+            .domain([0, d3.max(matHangData, d => d.xacSuat)])
             .range([height, 0]);
 
         const colorScale = d3.scaleOrdinal()
@@ -64,7 +64,7 @@ d3.csv("data.csv").then(data => {
             .attr("x", d => x(d.tenMatHang))
             .attr("y", d => y(d.xacSuat))
             .attr("width", x.bandwidth())
-            .attr("height", d => Math.max(5, height - y(d.xacSuat)))  
+            .attr("height", d => height - y(d.xacSuat))
             .style("fill", d => colorScale(d.tenMatHang))
             .on("mouseover", (event, d) => {
                 tooltip.style("visibility", "visible")
