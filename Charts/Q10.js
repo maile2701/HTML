@@ -1,6 +1,6 @@
 const margin = { top: 30, right: 50, bottom: 40, left: 60 },
-      width = 300 - margin.left - margin.right,
-      height = 100 - margin.top - margin.bottom;
+      width = 150 - margin.left - margin.right,
+      height = 20 - margin.top - margin.bottom;
 
 const container = d3.select("#chart")
     .style("display", "flex")
