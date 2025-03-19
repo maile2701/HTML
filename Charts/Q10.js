@@ -1,11 +1,11 @@
-const margin = { top: 30, right: 50, bottom: 40, left: 60 },
-      width = 150 - margin.left - margin.right,
-      height = 20 - margin.top - margin.bottom;
+const margin = { top: 30, right: 30, bottom: 40, left: 50 };
+const width = Math.min(400, window.innerWidth / 3 - margin.left - margin.right);
+const height = 250 - margin.top - margin.bottom;
 
 const container = d3.select("#chart")
     .style("display", "flex")
     .style("flex-wrap", "wrap")
-    .style("gap", "40px");
+    .style("gap", "20px");
 
 // Tạo tooltip
 const tooltip = d3.select("body")
